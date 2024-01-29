@@ -1,4 +1,4 @@
-#include "main.h"
+#include "main.h"C
 /**
  * _printf - function that print chara and stringsn
  * @format: pointer
@@ -7,6 +7,7 @@
 int _printf(const char *format, ...)
 {
 	int chara_print = 0;
+	int str_len = 0;
 	va_list list_of_args;
 
 	if (format == NULL)
@@ -26,18 +27,17 @@ int _printf(const char *format, ...)
 		{
 			write(1, format, 1);
 			chara_print++;
-		}
-		else if (*format == 'c')
+		} else if (*format == 'c')
 		{
-			char c = va_arg(list_of_args, *int);
+			char c = va_arg(list_of_args, int);
 
 			write(1, &c, 1);
 			chara_print++;
 		}
 		else if (*format == 's')
 		{
-			char *str = va_arg(list_of_args, char*)
-				int str_len = 0;
+			char *str = va_arg(list_of_args, char*);
+
 			while (str[str_len] != '\0')
 				str_len++;
 			write(1, str, str_len);
