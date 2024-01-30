@@ -2,12 +2,14 @@
 /**
  * _printf - function that print chara and stringsn
  * @format: pointer
+ * main - the main function
  * Return: chara_print
  */
+void main(void)
+{
 int _printf(const char *format, ...)
 {
-	int chara_print = 0;
-	int str_len = 0;
+	int chara_print = 0, str_len = 0;
 	va_list list_of_args;
 
 	if (format == NULL)
@@ -46,4 +48,5 @@ int _printf(const char *format, ...)
 	}
 	va_end(list_of_args);
 	return (chara_print);
+}
 }
